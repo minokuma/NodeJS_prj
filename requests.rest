@@ -1,0 +1,32 @@
+### GET / POSTS : 입장토큰을 가지고 데이터에 접근
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY2hpa28iLCJpYXQiOjE1OTY0Njc0OTksImV4cCI6MTU5NjQ2NzUyOX0.drjQpeURrJGlFDgwY2oiRa3WGDmAHhWBi2TBphDCrm0
+
+### DELETE / LOGOUT : 입장연장토큰을 반납한다.
+
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY2hpa28iLCJpYXQiOjE1OTY0Njc0OTl9.u9cGB3EM6qbXmAw_l25iE4Yf8h8CkSHbQ-CBUZnLBtk"
+}
+
+### POST / TOKEN : 입장연장토큰을 제시해서 새 입장토큰을 받는다.
+
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY2hpa28iLCJpYXQiOjE1OTY0Njc0OTl9.u9cGB3EM6qbXmAw_l25iE4Yf8h8CkSHbQ-CBUZnLBtk"
+}
+
+### POST / LOGIN : 로그인 시 입장토큰과 입장연장토큰을 받는다.
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+     "username": "chiko"
+}
+
